@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+</head>
+<body>
+    <h1>Resume Maker</h1>
+    <form method="POST">
+        <label for="template">Select Template:</label>
+        <select name="template">
+            <option value="simple">Simple</option>
+            <option value="professional">Professional</option>
+        </select><br><br>
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br><br>
+        <label for="experience">Experience:</label>
+        <textarea name="experience" required></textarea><br><br>
+        <label for="skills">Skills:</label>
+        <input type="text" name="skills" required><br><br>
+        <label for="education">Education:</label>
+        <textarea name="education" required></textarea><br><br>
+        <button type="submit">Generate Resume</button>
+    </form>
+    {% if resume %}
+        <h2>Your Generated Resume</h2>
+        <pre>{{ resume }}</pre>
+    {% endif %}
+</body>
+</html>
